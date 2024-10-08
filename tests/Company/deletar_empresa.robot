@@ -10,3 +10,7 @@ CT - Deletar empresa criada
     Cadastrar uma nova empresa
     Validar nova empresa criada
     Deletar empresa
+
+CT - Deletar empresa sem id definido 
+    Cadastrar uma nova empresa
+    Delete Cadastro com id inválido  
