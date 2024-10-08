@@ -7,8 +7,10 @@ AMBIENTE:
     USER: user/
     COMPANY: company/
     COMPANY_ADDRESS: company/address/
+    COMPANY_STATUS: company/status/
 
 # URL(Antiga): https://chips.qacoders-academy.com.br/api/
 # ${BASE_URL}                          https://chips.qacoders-academy.com.br
 # ${ENDPOINT_COMPANY}                  /api/company/
 # ${ENDPOINT_COMPANY_ADDRESS}          /api/company/address/
+

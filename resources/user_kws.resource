@@ -115,3 +115,5 @@ Deletar o novo usuário criado
     ...    headers=${HEADERS}    expected_status=404
     
     Should Be Equal As Strings    ${response.json()}[alert][0]    Esse usuário não existe em nossa base de dados.
+
+    
