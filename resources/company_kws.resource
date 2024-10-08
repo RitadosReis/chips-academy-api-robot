@@ -332,7 +332,4 @@ Campo país excedendo 50 caracteres
     Should Be Equal As Strings    ${response.json()}[error][0]    O campo País permite até 50 caracteres.
 Delete Cadastro com id inválido
    ${response_delete_company}    DELETE On Session    auth    ${AMBIENTE.ENDPOINTS.COMPANY}6705841584deb62f97966eb0   expected_status=404
-
-    Should Be Equal As Strings    ${response_delete_company.json()}[msg]    Essa companhia não existem em nossa base de dados.
-
-    
+   Should Be Equal As Strings    ${response_delete_company.json()}[msg]    Essa companhia não existem em nossa base de dados.
