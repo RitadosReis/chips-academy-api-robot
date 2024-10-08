@@ -332,6 +332,11 @@ Campo país excedendo 50 caracteres
     ${response}    PUT On Session    auth    ${AMBIENTE.ENDPOINTS.COMPANY_ADDRESS}${COMPANY_ID}    json=${requestJson}    expected_status=400
     
     Should Be Equal As Strings    ${response.json()}[error][0]    O campo País permite até 50 caracteres.
+<<<<<<< HEAD
+Delete Cadastro com id inválido
+   ${response_delete_company}    DELETE On Session    auth    ${AMBIENTE.ENDPOINTS.COMPANY}6705841584deb62f97966eb0   expected_status=404
+   Should Be Equal As Strings    ${response_delete_company.json()}[msg]    Essa companhia não existem em nossa base de dados.
+=======
 
 Realizar alteração status de true para false
     ${HEADERS}    Create Dictionary    Content-Type=Application/json
@@ -348,3 +353,4 @@ Realizar alteração status de true para false
     Dictionary Should Contain Item    ${response_json['updateCompany']}             status        ${False}  
 
     
+>>>>>>> 21f8ee4d582ef31b5fce6a1501e36fdce00c961e
