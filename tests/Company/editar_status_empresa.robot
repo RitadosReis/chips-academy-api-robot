@@ -6,4 +6,6 @@ Suite Setup    Realizar Login Admin
 
 *** Test Cases ***
 CT - Funcional - Atualizar o status da empresa
+    Cadastrar uma nova empresa
     Realizar alteração status de true para false
+   
