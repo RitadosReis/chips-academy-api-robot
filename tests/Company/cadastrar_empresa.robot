@@ -15,3 +15,8 @@ CT - Consultar empresa por ID
 
 CT - Deletar empresa criada
     Deletar empresa
+
+CT - Cadastrar empresa com CNPJ existente
+    [Tags]    nao-funcional
+    [Setup]    Cadastrar uma nova empresa
+    Cadastrar empresa com CNPJ existente
