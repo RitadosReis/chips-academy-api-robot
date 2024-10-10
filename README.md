@@ -52,34 +52,41 @@ robot -d ./logs tests/nome_arquivo.robot
 ## 📁 Dependencias ##
 ```
 ├── .github/workflows
-│   ├── robot-framework.yml
+│   └── robot-framework.yml
 │   
 ├── fixtures
 │   ├── data.yaml
-│   ├── environments.yaml
+│   └── environments.yaml
 │
 ├── logs
 │   ├── log.html
 │   ├── output.xml
-│   ├── report.html
+│   └── report.html
 │   
 ├── resources
 |   ├── package.resource
 |   ├── cadastro_usuario_kws.resource
 |   ├── cadastro_empresa_kws.resource
-|   ├── login_kws.resource
+|   └── login_kws.resource
 | 
 ├── tests
-│   ├── login.robot
-│   ├── cadastrar_empresa.robot
-│   ├── consultar_empresa.robot
-│   ├── deletar_empresa.robot
-│   ├── editar_empresa.robot
-│   ├── cadastrar_usuario.robot
-│   ├── consultar_empresa.robot
-│   ├── deletar_usuario.robot
-│   ├── editar_usuario.robot
+│   └── Auth 
+│   │   └── login.robot
+│   │
+│   └── Company
+│   │   ├── cadastrar_empresa.robot
+│   │   ├── consultar_empresa.robot
+│   │   ├── deletar_empresa.robot
+│   │   ├── editar_empresa.robot
+│   │   └──  editar__status_empresa.robot
+│   │
+│   └── User
+│       ├── cadastrar_usuario.robot
+│       ├── consultar_empresa.robot
+│       ├── deletar_usuario.robot
+│       └── editar_usuario.robot
 │   
-├──.gitignore
+├── .gitignore
 ├── README.md
+└── requeriments.txt
 ```
