@@ -27,7 +27,7 @@ Gerar endereco empresa
     ...    country=${country}   
     RETURN    &{endereco}
 
-Gerar dados empresa
+Gerar dados empresa      
     ${CNPJ}            Generate Random String  length=14  chars=[NUMBERS]
     ${companyName}     FakerLibrary.Company
     ${companyCNPJ}     Generate Random String    length=14    chars=[NUMBERS]
@@ -54,8 +54,8 @@ Gerar empresa
     Set To Dictionary      ${empresa}     address=${listaDeEnderecos}
     RETURN                 ${empresa}
     
-Cadastrar uma nova empresa
-    ${body}    Gerar empresa
+Cadastrar uma nova empresa    
+    ${body}    Gerar empresa    
     ${HEADERS}       Create Dictionary    Content-Type=Application/json
     ...    Authorization=${TOKEN_ADMIN}
     
@@ -77,6 +77,18 @@ Cadastrar uma nova empresa
     Set Test Variable     ${COMPANY_MAIL}      ${response_post_company.json()["newCompany"]["mail"]}
     Set Test Variable     ${CORPORATE_NAME}    ${response_post_company.json()["newCompany"]["corporateName"]}
     Set Test Variable     ${CNPJ}              ${response_post_company.json()["newCompany"]["registerCompany"]}
+
+
+Cadastrar empresa com CNPJ existente
+    ${body}    Gerar empresa
+    Set To Dictionary    ${body}    registerCompany=${CNPJ}      
+    ${HEADERS}       Create Dictionary    Content-Type=Application/json
+    ...    Authorization=${TOKEN_ADMIN}
+    
+    ${response_post_company}    POST On Session    auth    ${AMBIENTE.ENDPOINTS.COMPANY}    expected_status=400
+    ...    json=${body}    headers=${HEADERS}
+
+    Should Be Equal As Strings    ${response_post_company.json()}[alert][0]    Essa companhia já está cadastrada. Verifique o nome, CNPJ e a razão social da companhia.
 
 
 Validar nova empresa criada
